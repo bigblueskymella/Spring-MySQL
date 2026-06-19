@@ -51,7 +51,7 @@
 
         // [😶GET 방식] 서버에서 데이터 가져오기 (method 생략 = GET)
         function fetchBoards() {
-            fetch("/api/boards") //http://localhost:8080 😑배포시
+            fetch("https://spring-mysql-teds.onrender.com/api/boards") //http://localhost:8080 😑배포시
                 .then(response => response.json())
                 .then(data => {
                     const listContainer = document.getElementById("board-list");
@@ -95,7 +95,7 @@
             };
 
             // fetch에 method: "POST" 명시 필수!
-            fetch("http://localhost:8080/api/boards", {
+            fetch("https://spring-mysql-teds.onrender.com/api/boards", { // 😑배포시http://localhost:8080/api/boards
                 method: "POST", 
                 headers: {
                     "Content-Type": "application/json" // 내가 보내는 데이터가 JSON이라고 백엔드에 알림
